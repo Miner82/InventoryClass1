@@ -1,1 +1,22 @@
 
+ID,Product Descrip,Qty OH,Item Cost
+1,"Hub 3""",75,30
+2,"Hub 7""",4,73.5
+3,Inverter 2-70A,300,12.5
+4,Inverter 3-140A,240,13.5
+5,Fuse,1300,0.25
+6,"Support 100""",12,18
+7,"Support 48""",23,14
+8,Motor 15HP,8,830
+9,Motor 7HP,15,420
+10,"Check Valve 2.5""",38,11
+11,Check Valve 1.5,44,8.45
+12,"Hub 2.5""",220,25
+13,Transponder 1-30PSI,11,24
+14,Transponder 30-60psi,28,32.5
+15,"Header 4""",12,140
+16,"Header 8""",8,155
+17,L bar,200,13.2
+18,Motor 10HP,14,650
+19,"Nipple 2""",222,2.5
+20,"Wacher 2""",1000,0.05

@@ -58,7 +58,7 @@ ID       Product Descrip  Qty OH  Item Cost
 17  18            Motor 10HP      14     650.00
 18  19             Nipple 2"     222       2.50
 19  20             Wacher 2"    1000       0.05
-#Output:
+#Output showing cost rollup by category, and total inventory holding cost:
  Cost
 Prod              
 Chec         789.8

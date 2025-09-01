@@ -1,0 +1,73 @@
+import pandas as pd
+import numpy as np
+df = pd.read_csv("Inventory.csv")
+print(df)
+Product = df.iloc[0,2] 
+df = df.rename(columns = {'Product Descrip'.rstrip(): 'Prod', 'Qty OH': 'Q', 'Item Cost': 'C'})
+
+df['Cost'] = df['Q'] * df['C']
+
+df['Prod'] = df['Prod'].str[:4]
+print(df)
+print(df)pivot_tot =  df.pivot_table(index='Prod', values='Cost', aggfunc='sum', margins=True, margins_name="total Inv")
+print(pivot_tot)
+
+#original csv file dump:
+ ID       Product Descrip  Qty OH  Item Cost
+0    1                Hub 3"      75      30.00
+1    2                Hub 7"       4      73.50
+2    3        Inverter 2-70A     300      12.50
+3    4       Inverter 3-140A     240      13.50
+4    5                  Fuse    1300       0.25
+5    6          Support 100"      12      18.00
+6    7           Support 48"      23      14.00
+7    8            Motor 15HP       8     830.00
+8    9             Motor 7HP      15     420.00
+9   10      Check Valve 2.5"      38      11.00
+10  11       Check Valve 1.5      44       8.45
+11  12              Hub 2.5"     220      25.00
+12  13   Transponder 1-30PSI      11      24.00
+13  14  Transponder 30-60psi      28      32.50
+14  15             Header 4"      12     140.00
+15  16             Header 8"       8     155.00
+16  17                 L bar     200      13.20
+17  18            Motor 10HP      14     650.00
+18  19             Nipple 2"     222       2.50
+19  20             Wacher 2"    1000       0.05
+    ID       Product Descrip  Qty OH  Item Cost
+0    1                Hub 3"      75      30.00
+1    2                Hub 7"       4      73.50
+2    3        Inverter 2-70A     300      12.50
+3    4       Inverter 3-140A     240      13.50
+4    5                  Fuse    1300       0.25
+5    6          Support 100"      12      18.00
+6    7           Support 48"      23      14.00
+7    8            Motor 15HP       8     830.00
+8    9             Motor 7HP      15     420.00
+9   10      Check Valve 2.5"      38      11.00
+10  11       Check Valve 1.5      44       8.45
+11  12              Hub 2.5"     220      25.00
+12  13   Transponder 1-30PSI      11      24.00
+13  14  Transponder 30-60psi      28      32.50
+14  15             Header 4"      12     140.00
+15  16             Header 8"       8     155.00
+16  17                 L bar     200      13.20
+17  18            Motor 10HP      14     650.00
+18  19             Nipple 2"     222       2.50
+19  20             Wacher 2"    1000       0.05
+Selection deleted
+#Output with rollup inventory costs
+Cost
+Prod              
+Chec         789.8
+Fuse         325.0
+Head        2920.0
+Hub         8044.0
+Inve        6990.0
+L ba        2640.0
+Moto       22040.0
+Nipp         555.0
+Supp         538.0
+Tran        1174.0
+Wach          50.0
+total Inv  46065.8
